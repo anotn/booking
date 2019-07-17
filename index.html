@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+</head>
+<style>
+	.component {
+		margin: 20px;
+	}
+	.header {
+		display:flex;
+		align-items: center;
+	}
+	.nav {
+		flex: 1;
+		display:flex;
+		justify-content: space-between;
+    		background-color: cadetblue;
+		padding: 20px;
+	}
+	.nav div:hover {
+		color: #fff;
+		cursor: pointer;
+		text-decoration: underline;	
+	}
+	.logo {
+		flex:1;
+		display:flex;
+	}
+	.logo img {
+		height: 100px;
+		width: 100px;
+	}
+	.tools {
+		display: block;
+    		width: 80%;
+    		text-align: right;
+	}
+	.tools img {
+		height: 20px;
+		
+	}
+	.tools img:hover {
+		cursor: pointer;
+		
+	}
+	.modal-container {
+		display: none;
+    		flex-direction: column;
+    		align-items: center;
+    	        border: 1px solid blue;
+    		padding: 10px;
+    		position: absolute;
+    		top: 0;
+    		background-color: white;
+    		width: 100%;
+    		-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    		-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    		box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	}
+	.opened {
+		display: flex;
+		
+	}
+</style>
+<body>
+<div class="root">
+	<section class='header'>
+		<div class="logo">
+			<img src="https://img.freepik.com/free-icon/vintage-squared-camera_318-10040.jpg?size=338&ext=jpg" alt=""/>
+		</div>
+		<div class="nav">
+			<div onclick="popUp()">Home</div>
+			<div onCLick="openTravelingModal(this)">Traveling</div>
+			<div>Hostels</div>
+			<div>contacts</div>
+			<div>contacts</div>
+		</div>
+	</section>
+	<section class='content'>
+	</section>
+	<section class='footer'>
+	</section>
+	<section class="modal-container"/>
+		<div class="tools"><img onclick="closeModal()" src="https://cdn3.iconfinder.com/data/icons/status/100/close_1-512.png"/></div>
+		<div class="modal">
+			<div class="title">Hot tour to Georgia</div>
+			<div class="content">
+				<img src="http://kote.dp.ua/wp-content/uploads/2017/01/MESTIYA.jpg"/>
+				<div>Georgia is waiting for you</div>
+			</div>
+		</div>
+	</section>
+</div>
+</body>
+<script>
+	function popUp(){
+		alert('site is in development');
+	}
+	function openTravelingModal() {
+		var elem = document.getElementsByClassName('modal-container')[0];
+		elem.classList.add('opened');
+	}
+	function closeModal() {
+		var elem = document.getElementsByClassName('modal-container')[0];
+		elem.classList.remove('opened');
+	}
+</script>
+
+</html>
